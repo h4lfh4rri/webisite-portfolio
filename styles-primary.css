@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 0 40px;
+    margin: 0;
+    font-family: 'Quattrocento Sans', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 60px;
+    height: 100%;
+    width: 100%;
+}
+
+.left {
+    width: fit-content;
+    min-width: 100px;
+    margin-top: 24px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 1000;
+    width: 64px;
+    bottom: 24px;
+}
+
+.back-to-top-img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.back-to-top a:hover .back-to-top-img {
+    content: url('images/arrow_hover.webp');
+}
+
+.right {
+    width: fit-content;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.logo-image {
+    max-width: 32px;
+    height: auto;
+}
+
+nav {
+    font-family: 'Zilla Slab', serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li a {
+    font-weight: 400;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+nav li a:hover,
+nav li a:visited:hover {
+    color: #00A4E4;
+    opacity: 0.8;
+}
+
+.current-page {
+    text-decoration: underline;
+}
+
+.banner {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-top:30px;
+    background-color:#fbfaf5;
+    box-sizing: border-box;
+}
+
+.banner-text {
+    display: inline-block;
+    padding-left: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    animation: scrollText 12s linear infinite;
+    color:#16160e;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+    margin-top: 60px;
+}
+
+.image-text {
+    margin-bottom: 0;
+    line-height: 120%;
+    position: relative;
+    overflow: hidden;    
+}
+
+.image-text img {
+    height: auto;
+    max-width: 960px;
+    object-fit: contain;
+    width: 100%;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 31, 31, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.image-overlay:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.caption {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 10px;
+    line-height: 120%;
+}
+
+.small-detail{
+    color: #fefefe;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.copyright {
+    color: #a4a4aa;
+    margin-top: 60px;
+    margin-bottom: 24px;
+    text-align: right;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .left {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom:12px;
+        align-items: start;
+    }
+
+    .logo-image {
+        content: url(images/hz_logo-mobile.webp);
+        max-width: 360px;
+    }
+
+    .right {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .gallery {
+        margin-top: 40px;
+        gap: 32px;
+    }
+
+    .image-text {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .image-text img {
+        height: auto;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .copyright {
+        width: 100%;
+        text-align: left;
+    }
+}
