@@ -221,6 +221,7 @@ a {
     .main {
         flex-direction: column;
         gap: 24px;
+        width: 100%;
     }
 
     .left {
