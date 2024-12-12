@@ -234,7 +234,7 @@ a {
 
     .logo-image {
         content: url(images/hz_logo-mobile.webp);
-        max-width: 360px;
+        max-width: 240px;
     }
 
     .right {
