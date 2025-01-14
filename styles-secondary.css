@@ -199,6 +199,12 @@ p {
     line-height: 1.6;
 }
 
+.image-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+  }
+
 a {
     text-decoration: none;
     color: inherit;
