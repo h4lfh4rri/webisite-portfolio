@@ -206,6 +206,15 @@ a {
     color: inherit;
 }
 
+.profile-box {
+    display: flex;
+    align-items: center;
+    margin-top:60px;
+    outline: 1.5px solid #000;
+    padding: 20px;
+    border-radius: 4px; 
+}
+
 .copyright {
     color: #a4a4aa;
     margin-top: 60px;
